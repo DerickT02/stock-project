@@ -1,0 +1,6 @@
+.login {
+    text-align: center;
+    padding-top: 20%;
+    background-size: cover;
+    background-image: @import url(https://www.investors.com/wp-content/uploads/2019/01/Stock-MarketUptrend-04-adobe.jpg);;
+}

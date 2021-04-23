@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.stockContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    color: white;
+    font-family: 'Roboto Condensed';
+}
+
+.stockContainer button{
+    width: 100px;
+}
+

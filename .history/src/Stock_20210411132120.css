@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.stockContainer {
+    display: grid;
+    grid-template-rows: 100px 300px;
+    color: white;
+    font-family: 'Roboto Condensed';
+    
+    
+}
+

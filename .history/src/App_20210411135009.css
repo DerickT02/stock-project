@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.App {
+    text-align: center;
+    background-image: url('https://wallpaperaccess.com/full/2927307.jpg');
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.login {
+    font-family: 'Roboto Condensed';
+    color: white;
+    padding-top: 200px;
+   
+}
+
+
+
+
+
+.login .loginContainer input {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 200px;
+}
+
+.login .loginContainer label {
+    color: white;
+    margin-bottom: 2px;
+    margin-right:150px;
+    display: block;
+    font-size: 15px;
+    line-height: 1;
+
+
+
+  }
+
+  .login .loginContainer .btnContainer p span {
+      color: yellow;
+  }
+
+  .login .loginContainer .btnContainer p span:hover {
+    color: red;
+  }
+  
+  .login .loginContainer .errorMsg {
+    color: red;
+    font-size: 16px;
+  }
+
+  
+  
+
+
+
+
+

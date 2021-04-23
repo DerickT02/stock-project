@@ -1,0 +1,26 @@
+import React, {useContext} from 'react'
+import {GlobalContext} from './GlobalState'
+import YourWatchlist from './YourWatchlist'
+
+
+
+
+const Stock = ({symbol, price, key}) => {
+    const {
+        addStocktoWatchlist
+    } = useContext(GlobalContext)
+
+   
+   
+   
+    return (
+        <div>
+            <h1 key = {key}>{symbol} : {price}</h1>
+            <button onClick = {() => addStocktoWatchlist({symbol, price})}>Add stock</button>
+        </div>
+    )
+    
+}
+
+
+export default Stock

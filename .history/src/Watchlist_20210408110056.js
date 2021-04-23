@@ -1,0 +1,75 @@
+import {useEffect, useState, useContext} from 'react'
+import { GlobalContext } from './GlobalState'
+import {Link} from 'react-router-dom'
+import axios from 'axios'
+import Stock from './Stock'
+import YourWatchlist from './YourWatchlist'
+
+
+
+
+
+const WatchList = ({handleLogout}) => {
+ 
+    
+    const [search, setSearch] = useState ('')
+    
+
+    const {
+        list
+    } = useContext(GlobalContext)
+
+    const  { stock } = list
+    
+
+ //'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOG,F,UTX?apikey=29e1ca911facbf34d2f755785bed0de7'
+
+
+
+
+const handleChange = (e) => {
+    setSearch(e.target.value)
+}
+
+const filteredStocks = stocks.filter(stock => 
+    stock.symbol.toLowerCase().includes(search.toLowerCase())
+)
+
+
+
+
+
+
+
+
+
+return (
+    <div>
+        <h1>Bluelist</h1>
+        <h3>For all your blue chip stock needs</h3>
+        <Link to = '/'><button onClick = {handleLogout}>Logout</button></Link>
+        <Link to = '/yourwatchlist'><button>Your Watchlist</button></Link>
+       <br></br>
+       <h2>Search Stock</h2>
+       <input type = 'text' onChange = {handleChange}></input>
+         
+      {filteredStocks.map(stock => {
+          return (
+              <>
+            <Stock key = {Math.random()} 
+          symbol = {stock.symbol} 
+          price = {stock.price} />
+          
+          </>
+          
+          )
+          
+      })}
+    
+    </div>
+)
+}
+
+
+export default WatchList
+

@@ -1,0 +1,10 @@
+.Nav {
+    width: 100%;
+    height: 20%;
+    background: navy;
+    position: fixed;
+}
+.Nav button {
+    color: white;
+    background: navy;
+}

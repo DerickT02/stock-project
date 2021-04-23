@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.login .loginContainer{
+    text-align: center;
+    padding-top: 20%;
+    background-size: cover;
+    font-family: 'Roboto Condensed';
+    color: white;
+}
+
+.login .loginContainer .btnContainer p{
+color: white
+}
+
+.App-component {
+    background-image: url(https://g.foolcdn.com/editorial/images/486381/gettyimages-523155194.jpg) no-repeat center center;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

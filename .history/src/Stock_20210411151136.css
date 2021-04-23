@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.stockContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 200px;
+    color: white;
+    font-family: 'Roboto Condensed';
+    border-top: 2px solid white;
+   
+}
+
+
+
+.stockContainer button{
+    width: 200px;
+    height: 20px;
+    margin-top: 30px;
+    margin-left:600px;
+    background: transparent;
+    color:limegreen;
+    border: 2px solid limegreen;
+    cursor: pointer;
+}
+
+.stockContainer button:hover {
+    background: white;
+    color: limegreen
+}
+
+.watchlist {
+    font-family: 'Roboto Condensed';
+    color: white;
+}
+
+.watchlist input {
+    background: navy;
+    width: 40%;
+    height: 20px;
+    margin-bottom: 20px;
+    color: white
+}
+
+
+
+
+
