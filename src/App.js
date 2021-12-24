@@ -6,7 +6,7 @@ import YourWatchlist from './YourWatchlist'
 import Nav from './Nav'
 import './App.css'
 
-import {Route, BrowserRouter, Switch, Redirect} from 'react-router-dom'
+import {Route, BrowserRouter, Switch, Redirect, HashRouter, Router} from 'react-router-dom'
 import GlobalProvider from './GlobalState'
 
 
@@ -95,17 +95,15 @@ return (
    {user ? (
     
        <BrowserRouter>
-    
-       <GlobalProvider>
+        <GlobalProvider>
        <Nav handleLogout = {handleLogout}/>
        <Switch>
-       
            <Route exact path = '/'><Redirect to = '/watchlist' /></Route>
            <Route exact path = '/watchlist'><WatchList handleLogout = {handleLogout} /></Route>
            <Route exact path = '/yourwatchlist'><YourWatchlist /></Route>
        </Switch>
  
-   </GlobalProvider>
+        </GlobalProvider>
   
        </BrowserRouter>
        

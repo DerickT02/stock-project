@@ -2,15 +2,21 @@ import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Login from './Login';
 import WatchList from './Watchlist'
+import YourWatchlist from './YourWatchlist'
+import Nav from './Nav'
+import './App.css'
+
+import {Route, BrowserRouter, Switch, Redirect, HashRouter} from 'react-router-dom'
+import GlobalProvider from './GlobalState'
 
 
-function App(){
-const [user, setUser] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
-const [emailError, setEmailError] = useState('')
-const [passwordError, setPasswordError] = useState('')
-const [hasAccount, setHasAccount] = useState(false)
+const App = () => {
+    const [user, setUser] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [hasAccount, setHasAccount] = useState(false)
 
 const clearInputs = () => {
     setEmail('')
@@ -87,18 +93,41 @@ const authListener = () => {
 return (
    <div className = "App">
    {user ? (
-       <WatchList handleLogout = {handleLogout} />
+    
+       <HashRouter basename = {process.env.PUBLIC_URL}>
+    
+       <GlobalProvider>
+       <Nav handleLogout = {handleLogout}/>
+       <Switch>
+       
+           <Route exact path = '/'><Redirect to = '/watchlist' /></Route>
+           <Route exact path = '/watchlist'><WatchList handleLogout = {handleLogout} /></Route>
+           <Route exact path = '/yourwatchlist'><YourWatchlist /></Route>
+       </Switch>
+ 
+        </GlobalProvider>
+  
+       </HashRouter>
+       
+       
+       
    ) : (
-    <Login email = {email} 
-          setEmail = {setEmail} 
-          password = {password} 
-          setPassword={setPassword} 
-          handleLogin={handleLogin}
-          handleSignup={handleSignup}
-          hasAccount={hasAccount}
-          setHasAccount={setHasAccount}
-          emailError={emailError}
-          passwordError={passwordError} />
+    <BrowserRouter>
+        <Switch>
+            <Route exact path = '/watchlist'><Redirect to ='/'/></Route>
+            <Route exact path = '/'><Login email = {email} 
+            setEmail = {setEmail} 
+            password = {password} 
+            setPassword={setPassword} 
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError} /></Route>
+        </Switch>
+    </BrowserRouter>
+    
    )}
     
    </div>
